@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="输入项目"
         android:textColor="@android:color/black"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/et_account"

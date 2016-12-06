@@ -23,11 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.helloworld.LoginActivity">
+        <activity android:name="com.example.helloworld.LoginActivity" >
         </activity>
-        <activity
-            android:name="com.example.helloworld.RegisterActivity">
+        <activity android:name="com.example.helloworld.RegisterActivity" >
+        </activity>
+        <activity android:name="com.example.helloworld.HelloWorldActivity" >
+        </activity>
+        <activity android:name="com.example.helloworld.ForgotPassword" >
         </activity>
     </application>
 

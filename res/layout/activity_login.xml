@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:text="LOGIN TO HELLO"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <fragment
+        android:id="@+id/input_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
+        tools:layout="@layout/fragment_inputcell_simpletext" />
+
+    <fragment
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
+        tools:layout="@layout/fragment_inputcell_simpletext" />
+
+    <TextView
+        android:id="@+id/btn_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:padding="4dp"
+        android:text="忘记密码?"
+        android:textColor="#00f" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="horizontal" >
 
-        <fragment
-            android:id="@+id/input_account"
+        <Button
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
-            tools:layout="@layout/fragment_inputcell_simpletext" />
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:text="注册" />
 
-        <fragment
-            android:id="@+id/input_password"
+        <Button
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
-            tools:layout="@layout/fragment_inputcell_simpletext" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/btn_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_weight="2"
-                android:text="登录" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:text="忘记密码" />
-        </LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:text="登录" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="注册" />
-
-</RelativeLayout>
+</LinearLayout>

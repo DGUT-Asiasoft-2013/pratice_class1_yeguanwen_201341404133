@@ -23,12 +23,40 @@ public class LoginActivity extends Activity {
 		fragInputCellPassword = (SimpleTextInputCellFragment) getFragmentManager()
 				.findFragmentById(R.id.input_password);
 
+		findViewById(R.id.btn_forgot_password).setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goForgotPassword();
+			}
+		});
+
+		findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				goLogin();
+			}
+		});
+
 		findViewById(R.id.btn_register).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				goRegister();
 			}
 		});
+	}
+
+	void goForgotPassword() {
+		Intent itnt = new Intent(this, ForgotPassword.class);
+		startActivity(itnt);
+	}
+
+	void goLogin() {
+		Intent itnt = new Intent(this, HelloWorldActivity.class);
+		startActivity(itnt);
 	}
 
 	void goRegister() {

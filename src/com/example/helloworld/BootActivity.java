@@ -23,7 +23,6 @@ public class BootActivity extends Activity {
 		
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable() {
-			private int abcd = 0;
 			
 			public void run() {
 				startLoginActivity();
