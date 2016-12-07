@@ -1,97 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
+    android:layout_height="60dp"
+    android:background="@android:color/holo_blue_dark"
     android:orientation="horizontal" >
 
     <LinearLayout
+        android:id="@+id/tab_feeds"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/tab_background"
         android:gravity="center"
         android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/tab_feeds"
+        <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_launcher" />
 
-        <TextView android:text="Feeds" 
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"/>
+            android:text="Feeds"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
-   <LinearLayout
+    <LinearLayout
+        android:id="@+id/tab_notes"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/tab_background"
         android:gravity="center"
         android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/tab_notes"
+        <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_launcher" />
 
-        <TextView android:text="Notes" 
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"/>
+            android:text="Notes"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
-   <Button 
-       android:id="@+id/btn_new"
-       android:layout_width="50dp"
-       android:layout_height="50dp"
-       android:text="+"
-       android:layout_gravity="center"
-       android:textSize="30sp"/>
-   
-   <LinearLayout
+    <Button
+        android:id="@+id/btn_new"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="+" />
+
+    <LinearLayout
+        android:id="@+id/tab_search"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/tab_background"
         android:gravity="center"
         android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/tab_search"
+        <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_launcher" />
 
-        <TextView android:text="Search" 
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"/>
+            android:text="Search"
+            android:textColor="@android:color/white" />
     </LinearLayout>
-   
-   <LinearLayout
+
+    <LinearLayout
+        android:id="@+id/tab_me"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/tab_background"
         android:gravity="center"
         android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/tab_me"
+        <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_launcher" />
 
-        <TextView android:text="Me" 
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"/>
+            android:text="Me"
+            android:textColor="@android:color/white" />
     </LinearLayout>
-   
 
 </LinearLayout>

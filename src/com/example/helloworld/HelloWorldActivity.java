@@ -1,13 +1,69 @@
 package com.example.helloworld;
 
+import com.example.helloworld.fragments.pages.FeedListFragment;
+import com.example.helloworld.fragments.pages.MyProfileFragment;
+import com.example.helloworld.fragments.pages.NoteListFragment;
+import com.example.helloworld.fragments.pages.SearchPageFragment;
+import com.example.helloworld.fragments.widgets.MainTabbarFragment;
+import com.example.helloworld.fragments.widgets.MainTabbarFragment.OnTabSeletedListener;
+
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
 
 public class HelloWorldActivity extends Activity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_helloworld);
-	}
+
+        FeedListFragment contentFeedList = new FeedListFragment();
+        MyProfileFragment contentMyProfile = new MyProfileFragment();
+        NoteListFragment contentNoteList = new NoteListFragment();
+        SearchPageFragment contentSearchPage = new SearchPageFragment();
+        MainTabbarFragment tabbar;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_helloworld);
+
+                tabbar = (MainTabbarFragment) getFragmentManager().findFragmentById(R.id.frag_tabbar);
+                tabbar.setOnTabSeletedListener(new OnTabSeletedListener() {
+
+                        @Override
+                        public void onTabSelected(int index) {
+                                cotentChange(index);
+                        }
+                });
+
+        }
+
+        @Override
+        protected void onResume() {
+                super.onResume();
+                tabbar.setSelectedItem(0);
+        }
+
+        void cotentChange(int index) {
+                Fragment newFrag = null;
+                switch (index) {
+                case 0:
+                        newFrag = contentFeedList;
+                        break;
+                case 1:
+                        newFrag = contentNoteList;
+                        break;
+                case 2:
+                        newFrag = contentSearchPage;
+                        break;
+                case 3:
+                        newFrag = contentMyProfile;
+                        break;
+                default:
+                        break;
+                }
+                if (newFrag == null)
+                        return;
+
+                getFragmentManager().beginTransaction().replace(R.id.content, newFrag).commit();
+
+        }
 }

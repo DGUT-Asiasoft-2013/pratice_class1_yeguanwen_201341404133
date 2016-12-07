@@ -1,4 +1,4 @@
-package com.example.helloworld.fragments;
+package com.example.helloworld.fragments.pages;
 
 import com.example.helloworld.R;
 
@@ -8,16 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainTabbarFragment extends Fragment {
-
-        View btnNew, tabFeeds, tabNotes, tabSearch, tabMe;
-        View[] tabs;
+public class NoteListFragment extends Fragment {
         
+        View view;
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                View view = inflater.inflate(R.layout.fragment_main_tabbar, null);
-                // TODO Auto-generated method stub
-                return view;
                 
+                view = inflater.inflate(R.layout.fragment_page_note_list, null);
+                return view;
         }
 }
