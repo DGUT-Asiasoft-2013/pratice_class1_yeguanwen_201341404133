@@ -1,9 +1,14 @@
 package com.example.helloworld.fragments.widgets;
 
+import java.nio.channels.OverlappingFileLockException;
+
+import com.example.helloworld.HelloWorldActivity;
+import com.example.helloworld.NewPassageActivity;
 import com.example.helloworld.R;
 
 import android.R.integer;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,9 +40,15 @@ public class MainTabbarFragment extends Fragment {
                                 }
                         });
                 }
-
+                
                 return view;
 
+        }
+
+         void newPassage() {
+                Intent itnt = new Intent(getActivity(), NewPassageActivity.class);
+                startActivity(itnt);
+               
         }
 
         public static interface OnTabSeletedListener {

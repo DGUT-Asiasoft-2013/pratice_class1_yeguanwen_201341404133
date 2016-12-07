@@ -9,7 +9,9 @@ import com.example.helloworld.fragments.widgets.MainTabbarFragment.OnTabSeletedL
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class HelloWorldActivity extends Activity {
 
@@ -31,6 +33,14 @@ public class HelloWorldActivity extends Activity {
                         @Override
                         public void onTabSelected(int index) {
                                 cotentChange(index);
+                        }
+                });
+                
+                findViewById(R.id.btn_new).setOnClickListener(new View.OnClickListener() {
+                        
+                        @Override
+                        public void onClick(View v) {
+                                bringUpEditor();
                         }
                 });
 
@@ -64,6 +74,12 @@ public class HelloWorldActivity extends Activity {
                         return;
 
                 getFragmentManager().beginTransaction().replace(R.id.content, newFrag).commit();
-
         }
+
+        void bringUpEditor() {
+                Intent itnt = new Intent(this, NewPassageActivity.class);
+                startActivity(itnt);
+                overridePendingTransition(R.anim.slide_in_bottom, R.anim.none);
+        }
+
 }

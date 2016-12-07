@@ -1,14 +1,21 @@
 package com.example.helloworld.fragments.pages;
 
+import java.util.Random;
 import java.util.zip.Inflater;
 
+import com.example.helloworld.FeedContentActivity;
 import com.example.helloworld.R;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,6 +23,7 @@ import android.widget.TextView;
 public class FeedListFragment extends Fragment {
         View view;
         ListView listView;
+        String[] data;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -25,6 +33,21 @@ public class FeedListFragment extends Fragment {
 
                         listView = (ListView) view.findViewById(R.id.list);
                         listView.setAdapter(listAdapter);
+                        
+                        listView.setOnItemClickListener(new OnItemClickListener() {
+
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                        onItemClicked(position);
+                                }
+                        });
+                        
+                        Random rand = new Random();
+                        data = new String[10+ Math.abs(rand.nextInt()%20)];
+                        for(int i=0; i<data.length; i++){
+                                data[i] = "This row is "  + rand.nextInt();
+                        }
+                        
                 }
                 return view;
         }
@@ -43,26 +66,35 @@ public class FeedListFragment extends Fragment {
                         }
 
                         TextView text1 = (TextView) view.findViewById(android.R.id.text1);
-                        text1.setText("This is row" + position);
+                        text1.setText(data[position]);
+                                                
                         return view;
                 }
 
                 @Override
                 public long getItemId(int position) {
-                        // TODO Auto-generated method stub
+                        // 取出与列表中与指定索引对应行的ID
                         return position;
                 }
 
                 @Override
                 public Object getItem(int position) {
-                        // TODO Auto-generated method stub
-                        return "";
+                        // 获取数据中与指定索引对应的数据项
+                        return data[position];
                 }
 
                 @Override
                 public int getCount() {
-                        // TODO Auto-generated method stub
-                        return 20;
+                        // 数据的条目数
+                        return data == null ? 0 : data.length;
                 }
         };
+        
+        void onItemClicked(int position){
+                String text = data[position];
+                Intent itnt = new Intent(getActivity(), FeedContentActivity.class);
+                itnt.putExtra("text", text);
+                startActivity(itnt);
+        }
+        
 }
