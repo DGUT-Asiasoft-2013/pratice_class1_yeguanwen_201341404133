@@ -41,6 +41,14 @@ public class MainTabbarFragment extends Fragment {
                         });
                 }
                 
+                btnNew.setOnClickListener(new View.OnClickListener() {
+                        
+                        @Override
+                        public void onClick(View v) {
+                                onNewClicked();
+                        }
+                });
+                
                 return view;
 
         }
@@ -90,4 +98,22 @@ public class MainTabbarFragment extends Fragment {
         //           otherTab.setSelected(otherTab == tab);
         //        }
         //}
+        
+        //创建个接口，并创建个监听器，监听“+”号点击事件
+        
+        public static interface OnNewClickedListener{
+                void onNewClicked();
+        }
+        
+        OnNewClickedListener onNewClickedListener;
+        
+        public void setOnNewClickedListener(OnNewClickedListener listener) {
+                this.onNewClickedListener = listener;
+        }
+        
+        void onNewClicked(){
+                if(onNewClickedListener != null){
+                        onNewClickedListener.onNewClicked();
+                }
+        }
 }

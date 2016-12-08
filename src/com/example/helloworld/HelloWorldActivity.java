@@ -5,6 +5,7 @@ import com.example.helloworld.fragments.pages.MyProfileFragment;
 import com.example.helloworld.fragments.pages.NoteListFragment;
 import com.example.helloworld.fragments.pages.SearchPageFragment;
 import com.example.helloworld.fragments.widgets.MainTabbarFragment;
+import com.example.helloworld.fragments.widgets.MainTabbarFragment.OnNewClickedListener;
 import com.example.helloworld.fragments.widgets.MainTabbarFragment.OnTabSeletedListener;
 
 import android.app.Activity;
@@ -36,10 +37,18 @@ public class HelloWorldActivity extends Activity {
                         }
                 });
                 
-                findViewById(R.id.btn_new).setOnClickListener(new View.OnClickListener() {
+//                findViewById(R.id.btn_new).setOnClickListener(new View.OnClickListener() {
+//                        
+//                        @Override
+//                        public void onClick(View v) {
+//                                bringUpEditor();
+//                        }
+//                });
+                
+                tabbar.setOnNewClickedListener(new OnNewClickedListener() {
                         
                         @Override
-                        public void onClick(View v) {
+                        public void onNewClicked() {
                                 bringUpEditor();
                         }
                 });
