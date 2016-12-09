@@ -16,6 +16,7 @@ import android.view.Window;
 import android.widget.Toast;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -89,6 +90,8 @@ public class RegisterActivity extends Activity {
                         return;
                 }
 
+                password = MD5.getMD5(password);
+                
                 String account = fragInputCellAccount.getText();
                 String name = fragInputCellName.getText();
                 String email = fragInputCellEmail.getText();
@@ -102,6 +105,10 @@ public class RegisterActivity extends Activity {
                                 .addFormDataPart("name", name)
                                 .addFormDataPart("email", email)
                                 .addFormDataPart("passwordHash", password);
+                
+                if(fragInputCellImage.getPngData() != null){
+                        requestBody.addFormDataPart("avatar", "avatar", RequestBody.create(MediaType.parse("image/png"), fragInputCellImage.getPngData()));
+                }
 
                 //构造发送请求
                 Request request = new Request.Builder()
