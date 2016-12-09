@@ -10,18 +10,25 @@
         android:background="@android:color/white" >
 
         <TextView
-            android:id="@+id/feed_content_title"
+            android:id="@+id/feed_content_nav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
     </FrameLayout>
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="center"
-        android:src="@drawable/ic_launcher" />
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"

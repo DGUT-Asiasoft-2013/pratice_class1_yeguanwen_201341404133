@@ -17,11 +17,20 @@
         android:layout_weight="4" >
 
         <TextView
-            android:id="@+id/tv_list"
+            android:id="@+id/tv_list_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="HEHE"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_list_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_below="@id/tv_list_nav"
+            android:text="hehehe"
+            android:textSize="12sp" />
 
         <TextClock
             android:id="@+id/textClock1"
@@ -29,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:text="TextClock" 
-            android:textSize="12sp"/>
+            android:text="TextClock"
+            android:textSize="12sp" />
     </RelativeLayout>
 
 </LinearLayout>

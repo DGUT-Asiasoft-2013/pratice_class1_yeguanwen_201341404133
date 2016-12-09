@@ -33,7 +33,7 @@ public class FeedListFragment extends Fragment {
 
                         listView = (ListView) view.findViewById(R.id.list);
                         listView.setAdapter(listAdapter);
-                        
+
                         listView.setOnItemClickListener(new OnItemClickListener() {
 
                                 @Override
@@ -41,13 +41,13 @@ public class FeedListFragment extends Fragment {
                                         onItemClicked(position);
                                 }
                         });
-                        
+
                         Random rand = new Random();
-                        data = new String[10+ Math.abs(rand.nextInt()%20)];
-                        for(int i=0; i<data.length; i++){
-                                data[i] = "This row is "  + rand.nextInt();
+                        data = new String[10 + Math.abs(rand.nextInt() % 20)];
+                        for (int i = 0; i < data.length; i++) {
+                                data[i] = "" + rand.nextInt();
                         }
-                        
+
                 }
                 return view;
         }
@@ -65,9 +65,12 @@ public class FeedListFragment extends Fragment {
                                 view = convertView;
                         }
 
-                        TextView text = (TextView) view.findViewById(R.id.tv_list);
+                        TextView text = (TextView) view.findViewById(R.id.tv_list_nav);
                         text.setText(data[position]);
-                                                
+
+                        TextView text1 = (TextView) view.findViewById(R.id.tv_list_content);
+                        text1.setText("This row is " + data[position]);
+
                         return view;
                 }
 
@@ -89,12 +92,12 @@ public class FeedListFragment extends Fragment {
                         return data == null ? 0 : data.length;
                 }
         };
-        
-        void onItemClicked(int position){
-                String text = data[position];
+
+        void onItemClicked(int position) {
+                String nav = data[position];
                 Intent itnt = new Intent(getActivity(), FeedContentActivity.class);
-                itnt.putExtra("text", text);
+                itnt.putExtra("nav", nav);
                 startActivity(itnt);
         }
-        
+
 }
