@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import java.io.IOException;
 
+import com.example.helloworld.api.Server;
 import com.example.helloworld.fragments.inputcells.PictureInputCellFragment;
 import com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment;
 
@@ -11,6 +12,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
@@ -96,7 +98,7 @@ public class RegisterActivity extends Activity {
                 String name = fragInputCellName.getText();
                 String email = fragInputCellEmail.getText();
 
-                OkHttpClient client = new OkHttpClient();
+                OkHttpClient client = Server.getSharedClient();
 
                 
                 //构造发送内容
@@ -111,8 +113,7 @@ public class RegisterActivity extends Activity {
                 }
 
                 //构造发送请求
-                Request request = new Request.Builder()
-                                .url("http://172.27.0.59:8080/membercenter/api/register")
+                Request request = Server.requestBuilderWithApi("register")
                                 .method("post", null)
                                 .post(requestBody.build())
                                 .build();
@@ -133,9 +134,9 @@ public class RegisterActivity extends Activity {
                                                         progressDialog.dismiss();
                                                         RegisterActivity.this.onResponse(arg0, arg1.body().string());
 
-                                                } catch (IOException e) {
+                                                } catch (Exception e) {
                                                         e.printStackTrace();
-                                                        onFailure(arg0, e);
+                                                        RegisterActivity.this.onFailure(arg0, e);
                                                 }
 
                                         }

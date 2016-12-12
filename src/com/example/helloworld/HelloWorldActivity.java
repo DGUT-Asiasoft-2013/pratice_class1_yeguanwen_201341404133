@@ -86,7 +86,7 @@ public class HelloWorldActivity extends Activity {
         }
 
         void bringUpEditor() {
-                Intent itnt = new Intent(this, NewPassageActivity.class);
+                Intent itnt = new Intent(this, NewArticleActivity.class);
                 startActivity(itnt);
                 overridePendingTransition(R.anim.slide_in_bottom, R.anim.none);
         }

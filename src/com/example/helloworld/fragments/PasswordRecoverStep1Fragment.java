@@ -44,6 +44,10 @@ public class PasswordRecoverStep1Fragment extends Fragment {
                 void onGoNext();
         }
 
+        public String getText(){
+                return fragEmail.getText();
+        }
+        
         OnGoNextListener onGoNextListener;
 
         public void setOnGoNextListener(OnGoNextListener onGoNextListener) {

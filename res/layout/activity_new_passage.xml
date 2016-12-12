@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <fragment
-        android:id="@+id/passage_title"
+        android:id="@+id/article_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
@@ -31,7 +31,6 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="#FFFFFF"
             android:gravity="start"
             android:hint="请输入内容"
             android:inputType="none" />

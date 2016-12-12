@@ -3,7 +3,7 @@ package com.example.helloworld.fragments.widgets;
 import java.nio.channels.OverlappingFileLockException;
 
 import com.example.helloworld.HelloWorldActivity;
-import com.example.helloworld.NewPassageActivity;
+import com.example.helloworld.NewArticleActivity;
 import com.example.helloworld.R;
 
 import android.R.integer;
@@ -54,7 +54,7 @@ public class MainTabbarFragment extends Fragment {
         }
 
          void newPassage() {
-                Intent itnt = new Intent(getActivity(), NewPassageActivity.class);
+                Intent itnt = new Intent(getActivity(), NewArticleActivity.class);
                 startActivity(itnt);
                
         }
