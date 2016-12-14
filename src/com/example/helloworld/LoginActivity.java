@@ -84,6 +84,7 @@ public class LoginActivity extends Activity {
                 fragInputCellAccount.setHintText("请输入用户名");
                 fragInputCellPassword.setLabelText("密码");
                 fragInputCellPassword.setHintText("请输入密码");
+                fragInputCellPassword.setEditText(true);
         }
 
         void goLogin() {

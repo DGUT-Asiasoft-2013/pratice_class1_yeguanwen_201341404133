@@ -14,6 +14,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MultipartBody;
@@ -54,6 +55,11 @@ public class NewArticleActivity extends Activity {
         void sendArticle() {
                String title =  fragInputCellTitle.getText();
                String text = et_content.getText().toString();
+               
+               if(title.isEmpty()){
+                       Toast.makeText(this, "标题不能为空", Toast.LENGTH_SHORT).show();
+                       return ;
+               }
                
                OkHttpClient client = Server.getSharedClient();
                

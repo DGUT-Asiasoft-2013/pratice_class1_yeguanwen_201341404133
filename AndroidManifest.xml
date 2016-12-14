@@ -37,6 +37,8 @@
         </activity>
         <activity android:name="com.example.helloworld.NewArticleActivity" >
         </activity>
+        <activity android:name="com.example.helloworld.SendCommentActivity" >
+        </activity>
     </application>
 
 </manifest>
