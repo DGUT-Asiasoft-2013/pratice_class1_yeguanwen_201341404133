@@ -69,6 +69,7 @@ public class FeedListFragment extends Fragment {
                                 }
                         });
 
+                        //生成随机数
                         // Random rand = new Random();
                         // data = new String[10 + Math.abs(rand.nextInt() %
                         // 20)];
@@ -146,14 +147,16 @@ public class FeedListFragment extends Fragment {
                         }
 
                         TextView textTitle = (TextView) view.findViewById(R.id.tv_list_title);
-                        TextView textAuthorName = (TextView) view.findViewById(R.id.tv_list_content);
+                        TextView textAuthor = (TextView) view.findViewById(R.id.tv_list_author);
+                        TextView textContent = (TextView) view.findViewById(R.id.tv_list_content);
                         TextView textDate = (TextView) view.findViewById(R.id.editTime);
                         AvatarView avatar = (AvatarView) view.findViewById(R.id.avatar);
 
                         Article article = data.get(position);
 
                         textTitle.setText(article.getTitle());
-                        textAuthorName.setText("author:" + article.getAuthorName());
+                        textAuthor.setText("Author:" + article.getAuthorName());
+                        textContent.setText(article.getText());
                         avatar.load(Server.serverAddress + article.getAuthorAvatar());
 
                         // 添加时间格式

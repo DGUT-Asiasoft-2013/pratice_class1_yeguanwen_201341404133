@@ -29,7 +29,9 @@
         </activity>
         <activity android:name="com.example.helloworld.RegisterActivity" >
         </activity>
-        <activity android:name="com.example.helloworld.HelloWorldActivity" >
+        <activity
+            android:name="com.example.helloworld.HelloWorldActivity"
+            android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity android:name="com.example.helloworld.PasswordRecoverActivity" >
         </activity>
@@ -38,6 +40,8 @@
         <activity android:name="com.example.helloworld.NewArticleActivity" >
         </activity>
         <activity android:name="com.example.helloworld.SendCommentActivity" >
+        </activity>
+        <activity android:name="com.example.helloworld.PasswordChangeActivity" >
         </activity>
     </application>
 

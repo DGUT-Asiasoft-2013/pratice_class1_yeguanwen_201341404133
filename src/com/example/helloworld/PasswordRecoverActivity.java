@@ -7,6 +7,7 @@ import com.example.helloworld.fragments.PasswordRecoverStep1Fragment;
 import com.example.helloworld.fragments.PasswordRecoverStep1Fragment.OnGoNextListener;
 import com.example.helloworld.fragments.PasswordRecoverStep2Fragment;
 import com.example.helloworld.fragments.PasswordRecoverStep2Fragment.OnSubmitListener;
+import com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment;
 
 import android.app.Activity;
 import android.app.AlertDialog;

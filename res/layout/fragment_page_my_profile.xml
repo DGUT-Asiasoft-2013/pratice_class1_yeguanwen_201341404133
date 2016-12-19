@@ -24,4 +24,29 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp" />
 
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/btn_change_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="更改密码" />
+
+        <Button
+            android:id="@+id/btn_log_out"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:text="注销" />
+    </LinearLayout>
+
 </FrameLayout>

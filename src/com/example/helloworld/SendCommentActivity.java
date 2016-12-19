@@ -51,7 +51,7 @@ public class SendCommentActivity extends Activity {
 
                 MultipartBody.Builder body = new MultipartBody.Builder().addFormDataPart("text", text);
 
-                Request request = Server.requestBuilderWithApi("article/" + article.getid() + "/comments")
+                Request request = Server.requestBuilderWithApi("article/" + article.getId() + "/comments")
                                 .method("post", null).post(body.build()).build();
 
                 Server.getSharedClient().newCall(request).enqueue(new Callback() {

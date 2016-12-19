@@ -10,6 +10,8 @@ public class Comment implements Serializable {
         Date editDate;
         String authorName;
         String authorAvatar;
+        String articleTitle;
+        Date articleEditTime;
 
         public Integer getId() {
                 return id;
@@ -57,6 +59,22 @@ public class Comment implements Serializable {
 
         public void setAuthorAvatar(String authorAvatar) {
                 this.authorAvatar = authorAvatar;
+        }
+
+        public String getArticleTitle() {
+                return articleTitle;
+        }
+
+        public void setArticleTitle(String articleTitle) {
+                this.articleTitle = articleTitle;
+        }
+
+        public Date getArticleEditTime() {
+                return articleEditTime;
+        }
+
+        public void setArticleEditTime(Date articleEditTime) {
+                this.articleEditTime = articleEditTime;
         }
 
 }
